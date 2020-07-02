@@ -1,0 +1,31 @@
+<!--Jynga 2 synatx-->
+<!--Pyhton way of generating HTML-->
+<!--Inheriting from base.html-->
+
+{% extends "base.html" %}
+
+
+
+{% block head %} 
+<title>Home</title>
+{% endblock %}
+
+{% block body %} 
+<br>
+<h1>Home Page</h1>
+<br>
+
+<main role="main">
+    <div class="jumbotron">
+      <div class="col-sm-8 mx-auto">
+        <h1>Welcome</h1>
+        <p> Welcome To BlogSpace! A blog website that made by using Python and Flask. 
+         Feel free to chat away and make new friends &#128521; </p> 
+        <p>Go vist us out our website <a target="_blank" href="http://elliottpowelltech.com/">elliottpowelltech.com</a> and check out other cool things besides a Blog </p> 
+          <a class="btn btn-primary" href="/posts" role="button">Go To Posts &raquo;</a>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
+

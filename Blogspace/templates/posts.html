@@ -1,0 +1,41 @@
+<!--Jynga 2 synatx-->
+{% extends "base.html" %}
+
+{% block head %} 
+<title>Posts</title>
+{% endblock %}
+
+
+
+{% block body %} 
+<br>
+<div> 
+    <h1 style="display: inline">All Posts</h1>
+    <a tyle="display: inline"" class="btn btn-success float-right " href="/posts/new"> + New Post</a>
+</div>
+
+<hr>
+<!--Can loop over all the data (iterate)-->
+<!--prints out data like other JS framewroks withing post.title example -->
+
+{% for post in posts %}
+<br>
+    <h2>{{ post.title }}</h2>
+
+    {% if post.author %}
+        <small> <strong> By: </strong> {{ post.author }} on {{ post.date_posted }}</small>
+
+    {% else %}
+        <small> <strong> By: </strong> Unknown on  {{ post.date_posted }}</small>
+    {% endif %}
+    <br>
+    <br>
+<!-- Delete button-->
+    <p style="white-space: pre-wrap;">{{ post.content }}</p>
+    <a class="btn btn-danger " href="/posts/delete/{{post.id}}">Delete</a>
+    <a class="btn btn-primary " href="/posts/edit/{{post.id}}">Edit</a>
+    <hr>
+{% endfor%}
+
+{% endblock %}
+
