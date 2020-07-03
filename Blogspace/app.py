@@ -1,11 +1,11 @@
-#importing flask
-#1hr 55 sec
+
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
 
+# Implementing Sqlite
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///posts.db"
 db = SQLAlchemy(app)
 
@@ -68,6 +68,7 @@ def edit(id):
         return render_template("edit.html", post=post)
 
 
+# new blog post route
 @app.route("/posts/new", methods=["GET", "POST"])
 def new_post():
      if request.method == "POST":
